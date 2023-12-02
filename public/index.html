@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Chat-app</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.2/socket.io.js" integrity="sha512-VJ6+sp2E5rFQk05caiXXzQd1wBABpjEj1r5kMiLmGAAgwPItw1YpqsCCBtq8Yr1x6C49/mTpRdXtq8O2RcZhlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="app.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <form class="Login" onsubmit="PreventTheDefault(event)">
+        <div class="container">
+            <div class="content">
+                <div class="form">
+                    <h1>Join The Chat-room</h1>
+                    <label for="user-name">Enter Your Full name</label>
+                    <input type="text" id="user-name" maxlength="30" minlength="3" required/>
+                    <p class="warn"></p>
+                    <button type="submit" class="join-server">Join</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="app disabled">
+        <div class="chat-box">
+            <div class="header">
+                <div class="apparence">
+                    <span class="material-symbols-outlined" style="display: none;" id="dark-mode">
+                        dark_mode
+                        </span>
+                    <span class="material-symbols-outlined" id="light-mode">
+                        light_mode
+                    </span>
+                </div>
+                <div class="title">Chat-room</div>
+                <button type="button" id="exit"><span>Exit</span>--&gt;</button>
+            </div>
+            <div class="messages-box">
+                <div class="users-box">
+                    <div class="green-div"></div>
+                    <div class="users"></div>
+                </div>
+            </div>
+            <div class="message-tools">
+                <input type="text" name="message" id="user-message" placeholder="your message"/>
+                <button type="button" id="send">Send</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
